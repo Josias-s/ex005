@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formularios</title>
+    <style>
+        form {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 5px;
+            width: 300px;
+            margin: auto;
+            position: relative;
+            margin-top: 40px;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="reset"] {
+            background-color: #a83232;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"] {
+            background-color: #38873b;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #2e6f31;
+            font-weight: bolder;
+            
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        div {
+            display: block;
+            background-color: rgba(240, 248, 255, 0);
+            width: fit-content;
+            padding: 5px;
+            position: absolute;
+            top: 185px;
+            left: 190px;
+
+        }
+    </style>
+</head>
+<body>
+    <form action="form.php"autocomplete="off" method="get">
+        
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome" required placeholder="Usuario"autocomplete="name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required placeholder="Email" autocomplete="email"><br>
+        
+            <p>Sexo:</p>
+            <input type="radio" name="sexo" id="sexo"> <label for="sexo">Feminino</label><br>
+            <input type="radio" name="sexo" id="sexo"> <label for="sexo">Masculino</label>
+            <div>
+            <p>Esportes:</p>
+            <input type="checkbox" name="esportes" id="Basquete"> <label for="Basquete">Basquete</label><br>
+            <input type="checkbox" name="esportes" id="Volei"> <label for="Volei">Volei</label><br>   
+                <input type="checkbox" name="esportes" id="Futebol"> <label for="Futebol">Futebol</label>
+            </div>
+        <br>
+        <br>
+        
+        <label for="carro">Carro:</label>
+        <select name="carro" id="carros">
+            <option value="" disabled selected>--selecionar--</option>
+            <option value="Gol">Gol</option>
+            <option value="Fiat">Fiat</option>
+            <optgroup label="outros">
+             <option value="Chevrolet">Chevrolet</option>
+             <option value="Ford">Ford</option>
+            </optgroup>
+        </select><br><br>
+        <label for="texto">Mensagem:</label><br>
+        <textarea name="texto" id="texto" placeholder="Digite sua mensagem aqui..." rows="5" cols="38"></textarea>
+        <br><br>
+
+        <label for="n1">Numero:</label>
+        <input type="number" name="in1" id="n1" min="0" max="10" oninput="soma.innerHTML=Number(in1.value) + Number(in2.value)"><br><br>
+
+        <label for="n2">Numero:</label>
+        <input type="number" name="in2" id="n2" min="0" max="10" oninput="soma.innerHTML = Number(in1.value) + Number(in2.value)"><br><br>
+
+        <label for="isoma">Soma:</label>
+        <output name="soma" id="isoma">0</output>
+        <br><br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
+</form>
+    
+</body>
+</html>
